@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  namespace :user do
-    get 'users/show'
-    get 'users/edit'
-    get 'users/unsubscribe'
-  end
-  namespace :user do
-    get 'homes/top'
-  end
-  namespace :users do
-    get 'users/show'
-  end
+
   
   # 顧客用
   # URL /users/sign_in ...
@@ -21,7 +11,7 @@ Rails.application.routes.draw do
   scope module: :user do
     root to: "homes#top"
     get 'about' => 'homes#about'
-    resources :posts, only: [:index,:show]
+    resources :posts, only: [:index,:new,:create,:show,:edit,:update, :destroy]
     
     get 'users' => 'users#index'
     get 'users/my_page' => 'users#show'
@@ -30,6 +20,10 @@ Rails.application.routes.draw do
     get 'users/unsubscribe' => 'users#unsubscribe'
     patch 'users/withdraw' => 'users#withdraw'
     
+    
+    
+    
+    
   end
   # 管理者用
   # URL /admin/sign_in ...
@@ -37,4 +31,11 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
+  namespace :admin do
+    root to: "homes#top"
+    resources :genres, only: [:index,:edit,:destroy]
+    resources :posts, only: [:index,:new,:create,:show,:edit,:update,:destroy]
+    resources :users, only: [:index,:show,:edit,:update]
+  end
+  
 end

@@ -6,7 +6,7 @@ class User::UsersController < ApplicationController
   end
   
   def index
- end
+  end
 
   def unsubscribe
   end
