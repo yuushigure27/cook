@@ -1,2 +1,10 @@
-<h1>新規投稿</h1>
-<p>Find me in app/views/user/posts/new.html.erb</p>
+<div>
+  <h2>質問を作成する</h2>
+  <%= form_with model: @post, local: true do |f| %>
+  <%= f.text_area :content, rows:5 %>
+  <%= f.file_field :images, multiple: true %><br>
+  <div class="submit-block">
+    <%= f.submit class: "button" %>
+  </div>
+  <% end %>
+</div>
