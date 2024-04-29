@@ -63,3 +63,20 @@ body{
 #footer p{
   margin: 0;
 }
+
+
+.flash .notice{
+  background-color: #c3d825;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.flash .alert {
+  background-color: #c9171e;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
