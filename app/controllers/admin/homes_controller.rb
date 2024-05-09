@@ -4,7 +4,3 @@ class Admin::HomesController < ApplicationController
     # topアクションの処理を記述
   end
 end
-
-
-
-
